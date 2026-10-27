@@ -1,0 +1,64 @@
+{
+  "dataset": "PhysioNet EEGMMIDB 1.0.0",
+  "evaluation_subjects": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "frozen_config_sha256": "469b66810578f02865f0029cebb4c2b39ac91fd3b6995bb6ac830d6e086b0951",
+  "methods": {
+    "CSP calibration": {
+      "mean_balanced_accuracy": 0.4966269841269842,
+      "ci95_subject_t": [
+        0.36735710293752016,
+        0.6258968653164483
+      ],
+      "mean_balanced_accuracy_qc_pass": 0.5121693121693123
+    },
+    "Frozen population v2": {
+      "mean_balanced_accuracy": 0.4161904761904762,
+      "ci95_subject_t": [
+        0.3508325561806127,
+        0.48154839620033973
+      ],
+      "mean_balanced_accuracy_qc_pass": 0.40692239858906526
+    },
+    "Spectral calibration": {
+      "mean_balanced_accuracy": 0.47674603174603175,
+      "ci95_subject_t": [
+        0.3829382333281645,
+        0.570553830163899
+      ],
+      "mean_balanced_accuracy_qc_pass": 0.4757495590828925
+    }
+  },
+  "paired_gains": {
+    "Frozen population v2": {
+      "mean_difference": 0.08043650793650794,
+      "ci95_paired_subject_t": [
+        -0.061738712195357315,
+        0.2226117280683732
+      ]
+    },
+    "Spectral calibration": {
+      "mean_difference": 0.019880952380952395,
+      "ci95_paired_subject_t": [
+        -0.11218452717708347,
+        0.15194643193898824
+      ]
+    }
+  },
+  "protocol": "Each participant: QC-pass calibration on runs4+8, all run12 windows evaluated. Require >=2 clean examples of each class; otherwise all methods use frozen population fallback. No participant excluded from primary score.",
+  "limitations": [
+    "Subject calibration requires labeled EEG from that same person.",
+    "Scores are uncalibrated and participant variability remains large.",
+    "The held-out cohort is ten selected participants, not a clinical validation sample."
+  ]
+}
